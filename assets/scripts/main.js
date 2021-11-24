@@ -242,4 +242,15 @@ $(document).ready(function () {
     $("#user").css("display", "block");
     $("#user").siblings().css("display", "none");
   });
+  /// suggestions for you list dropdown show ///
+  $(
+    ".suggestions-for-you-list-items-img , .suggestions-for-you-list-items-title"
+  ).mouseenter(function () {
+    $(".suggestions-for-you-list-dropdown").hide(0);
+    $(this).siblings(".suggestions-for-you-list-dropdown").fadeIn("fast");
+  });
+  $(".suggestions-for-you-list-dropdown").mouseleave(function () {
+    $(this).hide(0);
+    $(".suggestions-for-you-list-dropdown").hide(0);
+  });
 });

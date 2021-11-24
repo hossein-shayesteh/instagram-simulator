@@ -83,7 +83,7 @@ nav {
           .nav-search-dropdown-section-background {
             width: 100vw;
             height: 100vh;
-            background-color: red;
+            background-color: transparent;
             position: absolute;
             top: 0;
             bottom: 0;
@@ -189,16 +189,6 @@ nav {
 
         .nav-icon {
           margin: 11px;
-        }
-        .nav-home {
-        }
-        .nav-direct {
-        }
-        .nav-post {
-        }
-        .nav-find {
-        }
-        .nav-activity {
         }
         .nav-user {
           img {
