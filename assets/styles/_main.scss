@@ -1,0 +1,28 @@
+main {
+  .wrapper {
+    .main-section {
+      width: 100%;
+      min-height: 500px;
+      display: none;
+    }
+    #home {
+      background-color: black;
+      display: block;
+    }
+    #direct {
+      background-color: red;
+    }
+    #post {
+      background-color: blue;
+    }
+    #find {
+      background-color: aquamarine;
+    }
+    #activity {
+      background-color: yellow;
+    }
+    #user {
+      background-color: brown;
+    }
+  }
+}
