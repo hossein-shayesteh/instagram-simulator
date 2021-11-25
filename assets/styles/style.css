@@ -3,6 +3,34 @@ body {
   font-family: "Helvetica 55 Roman", Arial, sans-serif;
 }
 
+body .loading-screen {
+  width: 99vw;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  position: fixed;
+  height: 100vh;
+  background-color: #ffffff;
+  z-index: 999;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .loading-screen i {
+  color: #c7c7c7;
+  font-size: 56px;
+}
+
 nav {
   position: fixed;
   top: 0;
@@ -324,7 +352,11 @@ main .wrapper #home .home-inner .suggestions-for-you .suggestions-for-you-inner 
   border-radius: 100%;
 }
 
-main .wrapper #home .home-inner .suggestions-for-you .suggestions-for-you-inner .switch-account .switch-account-text h6 {
+main .wrapper #home .home-inner .suggestions-for-you .suggestions-for-you-inner .switch-account .switch-account-text a {
+  text-decoration: none;
+}
+
+main .wrapper #home .home-inner .suggestions-for-you .suggestions-for-you-inner .switch-account .switch-account-text a h6 {
   margin: 0;
   font-weight: 600;
   font-size: 14px;
@@ -566,6 +598,41 @@ main .wrapper #home .home-inner .suggestions-for-you .suggestions-for-you-inner 
   width: 100%;
   border-radius: 5px;
   font-weight: 600;
+}
+
+main .wrapper #home .home-inner .suggestions-for-you .suggestions-for-you-inner .suggestions-for-you-links {
+  margin-top: 12px;
+  font-size: 11px;
+  font-weight: 400;
+  text-transform: none;
+}
+
+main .wrapper #home .home-inner .suggestions-for-you .suggestions-for-you-inner .suggestions-for-you-links ul {
+  margin: 0 0 16px 0;
+  padding: 0;
+  list-style: none;
+}
+
+main .wrapper #home .home-inner .suggestions-for-you .suggestions-for-you-inner .suggestions-for-you-links ul li {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+main .wrapper #home .home-inner .suggestions-for-you .suggestions-for-you-inner .suggestions-for-you-links ul li a {
+  color: #c7c7c7;
+  text-decoration: none;
+  line-height: 13px;
+}
+
+main .wrapper #home .home-inner .suggestions-for-you .suggestions-for-you-inner .suggestions-for-you-links ul li a::after {
+  content: "   .   ";
+  vertical-align: 3px;
+}
+
+main .wrapper #home .home-inner .suggestions-for-you .suggestions-for-you-inner .suggestions-for-you-links p {
+  text-transform: uppercase;
+  color: #c7c7c7;
 }
 
 main .wrapper #direct {

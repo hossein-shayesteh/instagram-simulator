@@ -6,4 +6,24 @@ body {
   // font-family: "Helvetica 45 Light", Arial, sans-serif;
   font-family: "Helvetica 55 Roman", Arial, sans-serif;
   // font-family: "Helvetica 65 Medium", Arial, sans-serif;
+  .loading-screen {
+    width: 99vw;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    position: fixed;
+    height: 100vh;
+    background-color: #ffffff;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    i {
+      color: #c7c7c7;
+      font-size: 56px;
+    }
+  }
 }
