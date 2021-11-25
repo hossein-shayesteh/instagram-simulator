@@ -295,8 +295,7 @@ main .wrapper #home .home-inner .suggestions-for-you .suggestions-for-you-inner 
   width: 293px;
   position: fixed;
   top: 80px;
-  left: 1116px;
-  right: 499px;
+  left: 58%;
 }
 
 main .wrapper #home .home-inner .suggestions-for-you .suggestions-for-you-inner .switch-account {
@@ -453,6 +452,7 @@ main .wrapper #home .home-inner .suggestions-for-you .suggestions-for-you-inner 
 }
 
 main .wrapper #home .home-inner .suggestions-for-you .suggestions-for-you-inner .suggestions-for-you-list .suggestions-for-you-list-container .suggestions-for-you-list-dropdown {
+  z-index: 3;
   display: none;
   width: 390px;
   height: 354px;
@@ -460,7 +460,6 @@ main .wrapper #home .home-inner .suggestions-for-you .suggestions-for-you-inner 
   position: absolute;
   left: 8px;
   top: 60px;
-  z-index: 4;
   border-radius: 15px;
   border: 1px solid #dbdbdb;
   -webkit-box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.15);

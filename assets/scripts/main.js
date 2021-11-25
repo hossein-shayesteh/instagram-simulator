@@ -1,44 +1,55 @@
-//////////////// Nav Bar ////////////////
 $(document).ready(function () {
-  /// nav bar search ///
-  //search bar dropdown show and show x-mark in the search bar when it is focused
+  ///////////////////////////////////////
+  //              Nav Bar              //
+  //              search               //
+  ///////////////////////////////////////
+  //      when input is focus      //
   $("#NavBarSearch").focus(function function1() {
+    // show placholder
     $(this).attr("placeholder", "Search");
+    // hide label
     $(this).siblings("label").hide();
+    // show x-mark
     $(this).siblings("span").show();
+    // show dropdown
     $(
       ".nav-search-dropdown-section,.nav-search-dropdown-section-background "
     ).fadeIn("fast");
   });
+  //      when input is not focus      //
   $("#NavBarSearch").focusout(function () {
+    // hide placholder
     $(this).removeAttr("placeholder", "Search");
+    // show label
     $(this).siblings("label").show();
+    // hide x-mark
     $(this).siblings("span").hide();
   });
-  $(".nav-search-dropdown-section-background").click(function (e) {
-    e.preventDefault();
-    $(this).fadeOut("fast");
-    $(".nav-search-dropdown-section").fadeOut("fast");
-  });
-  //dropdown menu clear all function
+  // hide dropdown by click outside it
+  $(".nav-search-dropdown-section-background,.suggestions-for-you").click(
+    function (e) {
+      e.preventDefault();
+      $(".nav-search-dropdown-section-background").fadeOut("fast");
+      $(".nav-search-dropdown-section").fadeOut("fast");
+    }
+  );
+  //      dropdown inner     //
+  // clear all buttom
   $(".nav-search-dropdown-title")
     .children("span")
     .click(function () {
       $(".nav-search-dropdown-items").hide();
     });
-  //dropdown menu clear items with x-mark
+  // clear item with x-mark
   $(".nav-search-dropdown-items-close").click(function () {
     $(this).parent(".nav-search-dropdown-items").hide();
   });
-  /// nav bar icons ///
-  // adding active class to icons
-  // $(".nav-icon").mouseenter(function (e) {
-  //   e.preventDefault();
-  //   $(this).addClass(" active");
-  //   $(this).siblings().removeClass(" active");
-  // });
-  ////////////// change svg path when icon is active //////////////
-  // when you click on ***home*** icon in navbar
+
+  ///////////////////////////////////////
+  //              Nav Bar              //
+  //            icons click            //
+  ///////////////////////////////////////
+  // when you click on ***home*** icon
   $(".nav-home , .nav-instagram-text-icon").on("click", function (e) {
     e.preventDefault();
     $(".home-svg-path").attr(
@@ -69,11 +80,11 @@ $(document).ready(function () {
       "d",
       "M34.6 6.1c5.7 0 10.4 5.2 10.4 11.5 0 6.8-5.9 11-11.5 16S25 41.3 24 41.9c-1.1-.7-4.7-4-9.5-8.3-5.7-5-11.5-9.2-11.5-16C3 11.3 7.7 6.1 13.4 6.1c4.2 0 6.5 2 8.1 4.3 1.9 2.6 2.2 3.9 2.5 3.9.3 0 .6-1.3 2.5-3.9 1.6-2.3 3.9-4.3 8.1-4.3m0-3c-4.5 0-7.9 1.8-10.6 5.6-2.7-3.7-6.1-5.5-10.6-5.5C6 3.1 0 9.6 0 17.6c0 7.3 5.4 12 10.6 16.5.6.5 1.3 1.1 1.9 1.7l2.3 2c4.4 3.9 6.6 5.9 7.6 6.5.5.3 1.1.5 1.6.5.6 0 1.1-.2 1.6-.5 1-.6 2.8-2.2 7.8-6.8l2-1.8c.7-.6 1.3-1.2 2-1.7C42.7 29.6 48 25 48 17.6c0-8-6-14.5-13.4-14.5z"
     );
-    //    change main body    //
+    //    change main body section    //
     $("#home").css("display", "block");
     $("#home").siblings().css("display", "none");
   });
-  // when you click on ***direct*** icon in navbar
+  // when you click on ***direct*** icon
   $(".nav-direct").on("click", function (e) {
     e.preventDefault();
     $(".home-svg-path").attr(
@@ -108,7 +119,7 @@ $(document).ready(function () {
     $("#direct").css("display", "block");
     $("#direct").siblings().css("display", "none");
   });
-  // when you click on ***post*** icon in navbar
+  // when you click on ***post*** icon
   $(".nav-post").on("click", function (e) {
     e.preventDefault();
     $(".home-svg-path").attr(
@@ -137,7 +148,7 @@ $(document).ready(function () {
     $("#post").css("display", "block");
     $("#post").siblings().css("display", "none");
   });
-  // when you click on find ***icon*** in navbar
+  // when you click on ***find*** icon
   $(".nav-find").on("click", function (e) {
     e.preventDefault();
     $(".home-svg-path").attr(
@@ -172,7 +183,7 @@ $(document).ready(function () {
     $("#find").css("display", "block");
     $("#find").siblings().css("display", "none");
   });
-  // when you click on ***activity*** icon in navbar
+  // when you click on ***activity*** icon
   $(".nav-activity").on("click", function (e) {
     e.preventDefault();
     $(".home-svg-path").attr(
@@ -207,7 +218,7 @@ $(document).ready(function () {
     $("#activity").css("display", "block");
     $("#activity").siblings().css("display", "none");
   });
-  // when you click on ***user*** icon in navbar
+  // when you click on ***user*** icon
   $(".nav-user").on("click", function (e) {
     e.preventDefault();
     $(".home-svg-path").attr(
@@ -242,15 +253,46 @@ $(document).ready(function () {
     $("#user").css("display", "block");
     $("#user").siblings().css("display", "none");
   });
-  /// suggestions for you list dropdown show ///
+
+  ///////////////////////////////////////
+  //               home                //
+  //        suggestions for you        //
+  ///////////////////////////////////////
+  // when your mouse move on a profile name or picture
   $(
     ".suggestions-for-you-list-items-img , .suggestions-for-you-list-items-title"
   ).mouseenter(function () {
+    var $this = $(this);
+    //       show dropdown
     $(".suggestions-for-you-list-dropdown").hide(0);
-    $(this).siblings(".suggestions-for-you-list-dropdown").fadeIn("fast");
+    // set timer for 800ms
+    // if mouse remain on a profile name or picture more than 800ms then dropdown will show
+    timer = setTimeout(function () {
+      $this.siblings(".suggestions-for-you-list-dropdown").fadeIn("fast");
+    }, 800);
   });
+  //       hide dropdown under 2 Conditions
+  // 1.when mouse leave dropdown
   $(".suggestions-for-you-list-dropdown").mouseleave(function () {
     $(this).hide(0);
+  });
+  // 1.when mouse leave div with *suggestions-for-you* class
+  $(".suggestions-for-you ").mouseleave(function () {
     $(".suggestions-for-you-list-dropdown").hide(0);
+  });
+  //      reset timer under 3 Conditions
+  // 1. mouse leaves *suggestions-for-you* class
+  $(".suggestions-for-you ").mouseleave(function () {
+    clearTimeout(timer);
+  });
+  // 2. mouse leaves dropdown
+  $(".suggestions-for-you-list-dropdown").mouseleave(function () {
+    clearTimeout(timer);
+  });
+  // 2. mouse Enter others profiles name or picture
+  $(
+    ".suggestions-for-you-list-items-img , .suggestions-for-you-list-items-title"
+  ).mouseleave(function () {
+    clearTimeout(timer);
   });
 });

@@ -23,8 +23,8 @@ main {
             width: 293px;
             position: fixed;
             top: 80px;
-            left: 1116px;
-            right: 499px;
+            left: 58%;
+
             .switch-account {
               position: relative;
               margin: 18px 0 10px 0;
@@ -143,6 +143,7 @@ main {
                   }
                 }
                 .suggestions-for-you-list-dropdown {
+                  z-index: 3;
                   display: none;
                   width: 390px;
                   height: 354px;
@@ -150,7 +151,6 @@ main {
                   position: absolute;
                   left: 8px;
                   top: 60px;
-                  z-index: 4;
                   border-radius: 15px;
                   border: 1px solid #dbdbdb;
                   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.15);
