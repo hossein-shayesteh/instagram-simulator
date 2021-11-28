@@ -4,6 +4,7 @@ nav {
   top: 0;
   right: 0;
   left: 0;
+  z-index: 10;
   background-color: #fff;
   border-bottom: 1px solid #dbdbdb;
   .container-fluid {
@@ -30,7 +31,6 @@ nav {
         bottom: 0;
         right: 0;
         left: 0;
-        z-index: 3;
       }
       .nav-search-bar {
         position: relative;
@@ -65,14 +65,13 @@ nav {
           @extend .perfect-centering;
           position: absolute;
           right: 7px;
-
           top: 50%;
           transform: translateY(-50%);
           height: 14px;
           width: 14px;
           background-color: #c7c7c7;
           border-radius: 100%;
-          z-index: 3;
+
           i {
             font-size: 10px;
             color: #fff;
@@ -83,13 +82,12 @@ nav {
           .nav-search-dropdown-section-background {
             width: 100vw;
             height: 100vh;
-            background-color: transparent;
+            background-color: red;
             position: absolute;
             top: 0;
             bottom: 0;
             right: 0;
             left: 0;
-            z-index: 3;
           }
           .nav-search-dropdown-triangle,
           .nav-search-dropdown-triangle2 {
@@ -98,13 +96,12 @@ nav {
             background-color: #fff;
             position: absolute;
             margin-top: 10px;
-            z-index: 4;
             left: 50%;
             transform: rotate(45deg) translate(-50%, 0);
             box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.15);
           }
           .nav-search-dropdown-triangle2 {
-            z-index: 5;
+            z-index: 6;
             box-shadow: none;
           }
           .nav-search-dropdown {
@@ -113,7 +110,7 @@ nav {
             position: absolute;
             height: 362px;
             background-color: #fff;
-            z-index: 4;
+            z-index: 5;
             left: 50%;
             margin-top: 10px;
             border-radius: 6px;

@@ -1,0 +1,38 @@
+main {
+  .wrapper {
+    .main-section {
+      width: 100%;
+      min-height: 500px;
+      display: none;
+    }
+    #home {
+      display: block;
+      .home-inner {
+        .timeline {
+          .timeline-inner {
+            max-width: 580px;
+            float: left;
+            margin-top: 80px;
+            width: 100%;
+
+            .follower-post {
+              border-radius: 3px;
+              background-color: #fff;
+              border: 1px solid #dbdbdb;
+              .follower-post-box {
+                .follower-post-box-header {
+                }
+                .follower-post-box-like {
+                }
+                .follower-post-box-caption {
+                }
+                .follower-post-box-comment {
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
