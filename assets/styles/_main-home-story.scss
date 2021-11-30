@@ -8,7 +8,7 @@
           border-radius: 3px;
           padding: 16px 0;
           position: relative;
-          margin-bottom: 24px;
+
           background-color: #fff;
           border: 1px solid #dbdbdb;
           z-index: 1;
@@ -51,11 +51,14 @@
                 }
                 .story-box-id {
                   text-align: center;
+                  width: 66px;
+                  white-space: nowrap;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+
                   span {
                     font-size: 12px;
                     line-height: 16px;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
                   }
                 }
               }
