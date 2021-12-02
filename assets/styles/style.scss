@@ -1,11 +1,13 @@
 @import "_variable";
+@import "_mixin";
 @import "_reset";
 @import "_body";
 @import "_nav";
-@import "_main-home";
-@import "_mixin";
+@import "_home";
 @import "_extend";
 @import "_mediaquerys";
 @import "_animations";
-@import "_main-home-aside";
-@import "_main-home-story";
+@import "_home-aside";
+@import "_home-story";
+@import "_home-modals";
+@import "_home-aside-modals";

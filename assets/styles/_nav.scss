@@ -1,178 +1,138 @@
-$black-text: #262626;
 nav {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
+  @include fixed(0, 0, auto, 0);
   z-index: 10;
-  background-color: #fff;
-  border-bottom: 1px solid #dbdbdb;
+  background-color: $white;
+  border-bottom: $main-border;
   .container-fluid {
     .nav-wrapper {
-      height: 53px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      @include flex(space-between, center);
+      @include size(auto, 53px);
       .nav-instagram-text-icon {
-        margin-top: 7px;
-        width: 103px;
-        height: 29px;
+        @include size(103px, 29px);
+        margin: 7px 0 0 0;
         img {
-          width: 103px;
+          @include size(103px, 29px);
         }
       }
       .nav-search-dropdown-section-background {
-        width: 100vw;
-        height: 100vh;
+        @include absolute(0, 0, 0, 0);
+        @include size(100vw, 100vh);
         background-color: transparent;
-        position: absolute;
-        top: 0;
         display: none;
-        bottom: 0;
-        right: 0;
-        left: 0;
       }
       .nav-search-bar {
         position: relative;
         label {
-          position: absolute;
-          color: #7f7f7f;
-          font-size: 14px;
-          left: 12px;
-          top: 3.5px;
+          @include absolute(3.5px, auto, auto, 12px);
+          @include flex(unset, center);
+          @include font(14px, 400, #8e8e8e);
+          background-color: $body-color;
           cursor: text;
-          display: flex;
-          align-items: center;
-          background-color: #fafafa;
           i {
-            font-size: 10px;
-            color: inherit;
-            margin-right: 5px;
+            @include font(10px, 0, #8e8e8e);
+            margin: 0 5px 0 0;
           }
         }
-        position: relative;
         input {
-          height: 28px;
-          border: 1px solid #dbdbdb;
-          outline: 0;
+          @include font(14px, 400, $black);
+          @include size(215px, 28px);
+          border: $main-border;
+          background-color: $body-color;
           border-radius: 3px;
-          background-color: #fafafa;
-          font-size: 14px;
           padding: 3px 12px;
-          color: #151515;
         }
         .close {
-          @extend .perfect-centering;
-          position: absolute;
-          right: 7px;
-          top: 50%;
+          @include absolute(50%, 7px, auto, auto);
+          @include flex(center, center);
+          @include size(14px, 14px);
           transform: translateY(-50%);
-          height: 14px;
-          width: 14px;
           background-color: #c7c7c7;
           border-radius: 100%;
 
           i {
-            font-size: 10px;
-            color: #fff;
+            @include font(10px, 0, $white);
           }
         }
         .nav-search-dropdown-section {
           display: none;
           .nav-search-dropdown-section-background {
-            width: 100vw;
-            height: 100vh;
-            background-color: red;
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            right: 0;
-            left: 0;
+            @include absolute(0, 0, 0, 0);
+            @include size(100vw, 100vh);
           }
           .nav-search-dropdown-triangle,
           .nav-search-dropdown-triangle2 {
-            width: 16px;
-            height: 16px;
-            background-color: #fff;
-            position: absolute;
-            margin-top: 10px;
-            left: 50%;
+            @include size(16px, 16px);
+            @include absolute(auto, auto, auto, 50%);
+            box-shadow: $box-shadow;
+            background-color: $white;
+            margin: 10px 0 0 0;
             transform: rotate(45deg) translate(-50%, 0);
-            box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.15);
           }
           .nav-search-dropdown-triangle2 {
             z-index: 6;
             box-shadow: none;
           }
           .nav-search-dropdown {
-            overflow: scroll;
-            width: 375px;
-            position: absolute;
-            height: 362px;
-            background-color: #fff;
+            @include absolute(auto, auto, auto, 50%);
+            @include flex(unset, unset);
+            @include overflow(hidden, scroll);
+            @include size(375px, 362px);
+            box-shadow: $box-shadow;
+            background-color: $white;
+            flex-direction: column;
             z-index: 5;
-            left: 50%;
-            margin-top: 10px;
+            margin: 10px 0 0 0;
+            padding: 0;
             border-radius: 6px;
             transform: translate(-50%, 0);
-            box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.15);
-            display: flex;
-            flex-direction: column;
             .nav-search-dropdown-title {
+              @include flex(space-between, center);
               padding: 15px 17px;
-              display: flex;
-              justify-content: space-between;
-              align-items: center;
               :nth-child(2) {
-                color: #0095f6;
+                color: $blue;
                 cursor: pointer;
               }
               span {
+                @include font(16px, 600, $black);
                 position: relative;
-                font-size: 16px;
                 line-height: 24px;
-                font-weight: 600;
-                color: $black-text;
               }
             }
             .nav-search-dropdown-items {
+              @include flex(unset, center);
+              @include size(100%, auto);
+              flex-direction: row;
               position: relative;
               padding: 5px 15px;
-              display: flex;
-              align-items: center;
-              flex-direction: row;
+              &:hover {
+                background-color: $body-color;
+                cursor: pointer;
+              }
               img {
-                width: 44px;
-                height: 44px;
-                border-radius: 100%;
+                @include size(44px, 44px);
+                border-radius: 50%;
               }
               .nav-search-dropdown-items-title {
-                color: $black-text;
+                color: $black;
                 margin: 0 14px;
                 h6 {
-                  display: flex;
-                  align-items: center;
+                  @include flex(unset, center);
+                  @include font(14px, 600, $black);
                   margin: 0;
-                  font-size: 14px;
-                  font-weight: 600;
                   img {
-                    margin-left: 5px;
-                    width: 12px;
-                    height: 12px;
+                    @include size(12px, 12px);
+                    margin: 0 0 0 5px;
                   }
                 }
                 p {
+                  @include font(14px, 400, #8e8e8e);
                   margin: 0;
-                  font-weight: 400;
-                  font-size: 14px;
-                  color: #8e8e8e;
                 }
               }
               .fa-xmark {
-                color: #8e8e8e;
-                font-size: 18px;
-                position: absolute;
-                right: 25px;
+                @include absolute(auto, 25px, auto, auto);
+                @include font(18px, 0, #8e8e8e);
+                padding: 10px;
                 cursor: pointer;
               }
             }
@@ -180,18 +140,15 @@ nav {
         }
       }
       .nav-icons-bar {
-        display: flex;
-        justify-content: center;
+        @include flex(center, center);
         flex-direction: row;
-
         .nav-icon {
           margin: 11px;
         }
         .nav-user {
           img {
-            width: 22px;
-            height: 22px;
-            border-radius: 100%;
+            @include size(22px, 22px);
+            border-radius: 50%;
           }
         }
       }

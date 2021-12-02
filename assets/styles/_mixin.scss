@@ -1,0 +1,32 @@
+@mixin flex($justify: center, $align: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+@mixin absolute($top, $right, $bottom, $left) {
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+@mixin fixed($top1, $right1, $bottom1, $left1) {
+  position: fixed;
+  top: $top1;
+  right: $right1;
+  bottom: $bottom1;
+  left: $left1;
+}
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+@mixin overflow($overflow-x: auto, $overflow-y: auto) {
+  overflow-x: $overflow-x;
+  overflow-y: $overflow-y;
+}
+@mixin font($font-size, $font-weight, $font-color) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  color: $font-color;
+}

@@ -1,0 +1,91 @@
+.switch-account-modal {
+  .otions {
+    @include size(400px, 235px);
+    @include font(14px, 400, $black);
+    background-color: $white;
+    z-index: 2;
+    border-radius: 12px;
+    .otions-header {
+      @include flex(space-between, center);
+      border-bottom: $main-border;
+      height: 40px;
+      div {
+        min-width: 50px;
+        &:nth-child(2) {
+          @include font(16px, 600, $black);
+        }
+      }
+      button {
+        padding: 0 16px;
+      }
+    }
+    .otions-body {
+      @include overflow(hidden, scroll);
+      @include size(100%, 145px);
+      .otions-body-item {
+        @include flex(unset, center);
+        padding: 8px 16px;
+        position: relative;
+        img {
+          @include size(56px, 56px);
+          border-radius: 50%;
+          margin: 0 12px 0 0;
+        }
+        span {
+          @include font(14px, 600, $black);
+        }
+        input {
+          @include size(24px, 24px);
+          @include absolute(auto, 5px, auto, auto);
+          border-radius: 50%;
+        }
+      }
+    }
+    .otions-footer {
+      @include flex(center, center);
+      @include size(100%, 50px);
+      border-top: $main-border;
+      button {
+        @include font(14px, 600, $blue);
+      }
+    }
+  }
+}
+
+.unfollow-account-modal-1,
+.unfollow-account-modal-2,
+.unfollow-account-modal-3,
+.unfollow-account-modal-4 {
+  .otions {
+    @include font(14px, 400, $black);
+    @include size(400px, auto);
+    background-color: $white;
+    z-index: 2;
+    border-radius: 12px;
+    .otions-header {
+      margin: 32px 16px 16px 16px;
+      @include flex(center, center);
+      img {
+        @include size(90px, 90px);
+        border-radius: 50%;
+      }
+    }
+    .otions-body {
+      text-align: center;
+      padding: 16px 32px;
+    }
+    .otions-footer {
+      button {
+        width: 100%;
+        border-top: $main-border;
+        line-height: 1.5;
+        min-height: 48px;
+        padding: 4px 8px;
+        text-align: center;
+        &:nth-child(1) {
+          @include font(14px, 700, $red);
+        }
+      }
+    }
+  }
+}

@@ -4,27 +4,29 @@ $(document).ready(function () {
   //              search               //
   ///////////////////////////////////////
   //      when input is focus      //
+  $("#NavBarSearch").siblings("span").hide();
   $("#NavBarSearch").focus(function function1() {
-    // show placholder
+    // show input placholder
     $(this).attr("placeholder", "Search");
-    // hide label
+    // hide input label
     $(this).siblings("label").hide();
-    // show x-mark
+    // show x-mark in the input
     $(this).siblings("span").show();
-    // show dropdown
+    // show dropdown div
     $(
       ".nav-search-dropdown-section,.nav-search-dropdown-section-background "
     ).fadeIn("fast");
   });
   //      when input is not focus      //
   $("#NavBarSearch").focusout(function () {
-    // hide placholder
+    // hide input placholder
     $(this).removeAttr("placeholder", "Search");
-    // show label
+    // show input label
     $(this).siblings("label").show();
     // hide x-mark
     $(this).siblings("span").hide();
   });
+  //      show dropdown    //
   // hide dropdown by click outside it
   $(".nav-search-dropdown-section-background,.suggestions-for-you").click(
     function (e) {
@@ -36,11 +38,11 @@ $(document).ready(function () {
   //      dropdown inner     //
   // clear all buttom
   $(".nav-search-dropdown-title")
-    .children("span")
+    .children("span:not(:first-child)")
     .click(function () {
       $(".nav-search-dropdown-items").hide();
     });
-  // clear item with x-mark
+  // clear item with x-mark in front of each item
   $(".nav-search-dropdown-items-close").click(function () {
     $(this).parent(".nav-search-dropdown-items").hide();
   });

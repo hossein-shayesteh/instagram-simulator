@@ -25,10 +25,6 @@ $(document).ready(function () {
   $(".follower-post-box-header").mouseleave(function () {
     $(".follower-post-box-header-dropdown").hide(0);
   });
-  // 3.when click div with *follower-post-box-header* class
-  $(".follower-post-box-header").click(function () {
-    $(".follower-post-box-header-dropdown").hide(0);
-  });
   //      reset timer under 3 Conditions
   // 1. mouse leaves *suggestions-for-you* class
   $(".follower-post-box-header").mouseleave(function () {
@@ -45,7 +41,7 @@ $(document).ready(function () {
     clearTimeout(timer);
   });
   //                captions                //
-  //press more button
+  //press more button to show full caption
   $(".follower-post-box-caption-more").click(function (e) {
     e.preventDefault();
     $(this).hide();
@@ -55,8 +51,10 @@ $(document).ready(function () {
   //post a comment
   $(".comment-send").keyup(function () {
     if ($(this).val()) {
+      // if input is not empty change color to blue
       $(this).siblings("span").addClass("active");
     } else {
+      // if input is  empty change color to gray
       $(this).siblings("span").removeClass("active");
     }
   });

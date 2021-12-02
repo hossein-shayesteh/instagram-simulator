@@ -6,12 +6,29 @@
   margin-right: auto;
   margin-left: auto;
 }
+@media (min-width: 0px) {
+  .wrapper {
+    max-width: 600px;
+  }
+  .nav-wrapper {
+    max-width: 100%;
+  }
+  .suggestions-for-you {
+    display: none;
+  }
+  .nav-search-bar {
+    display: none;
+  }
+}
 @media (min-width: 576px) {
   .wrapper {
     max-width: 600px;
   }
   .nav-wrapper {
     max-width: 100%;
+  }
+  .nav-search-bar {
+    display: block;
   }
 }
 @media (min-width: 768px) {
@@ -25,6 +42,9 @@
 @media (min-width: 992px) {
   .wrapper {
     max-width: 935px;
+  }
+  .suggestions-for-you {
+    display: block;
   }
 }
 @media (min-width: 1200px) {

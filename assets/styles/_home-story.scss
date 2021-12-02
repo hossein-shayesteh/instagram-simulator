@@ -1,0 +1,91 @@
+#home {
+  .home-inner {
+    .timeline {
+      .timeline-inner {
+        .story {
+          @include overflow(hidden, hidden);
+          @include size(100%, 118px);
+          background-color: $white;
+          border: $main-border;
+          border-radius: 3px;
+          padding: 16px 0;
+          position: relative;
+          z-index: 1;
+          ul {
+            @include flex(unset, center);
+            transition: transform 0.3s ease;
+            li {
+              position: relative;
+              .story-box {
+                @include flex(start, center);
+                @include size(80px, 122px);
+                flex-direction: column;
+                cursor: pointer;
+                padding: 0 4px;
+                .story-box-img {
+                  @include flex(center, center);
+                  @include size(66px, 66px);
+                  position: relative;
+                  .ring {
+                    @include size(66px, 66px);
+                    position: absolute;
+                  }
+                  .profile-photo {
+                    @include size(56px, 56px);
+                    border-radius: 50%;
+                  }
+                }
+                .story-box-id {
+                  @include size(66px, auto);
+                  text-align: center;
+                  white-space: nowrap;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+
+                  span {
+                    @include font(12px, 400, $black);
+                  }
+                }
+              }
+            }
+          }
+          .story-scroll {
+            .story-left-scroll {
+              display: none;
+              .story-left-scroll-inner {
+                @include absolute(50%, auto, auto, 0);
+                @include flex(center, center);
+                @include size(44px, 44px);
+                transform: translateY(-50%);
+                padding: 10px;
+                cursor: pointer;
+                i {
+                  @include flex(center, center);
+                  @include size(24px, 24px);
+                  background-color: $white;
+                  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.4);
+                  border-radius: 50%;
+                }
+              }
+            }
+            .story-right-scroll {
+              @include absolute(50%, 0, auto, auto);
+              @include flex(center, center);
+              @include size(44px, 44px);
+              transform: translateY(-50%);
+              padding: 10px;
+              cursor: pointer;
+              .story-right-scroll-inner {
+                @include flex(center, center);
+                @include size(24px, 24px);
+                background-color: $white;
+                box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.4);
+                border-radius: 50%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

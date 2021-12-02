@@ -1,0 +1,388 @@
+main {
+  .wrapper {
+    .main-section {
+      @include size(100%, auto);
+      display: none;
+    }
+    #home {
+      display: block;
+      .home-inner {
+        .timeline {
+          .timeline-inner {
+            @include size(100%, auto);
+            max-width: 580px;
+            float: left;
+            margin: 80px 0 0 0;
+
+            .follower-post {
+              .follower-post-box {
+                margin: 24px 0 0 0;
+                border-radius: 3px;
+                background-color: $white;
+                border: $main-border;
+                .follower-post-box-header {
+                  @include flex(unset, center);
+                  border-bottom: 1px solid rgb(239, 239, 239);
+                  flex-direction: row;
+                  position: relative;
+                  padding: 14px;
+                  min-height: 60px;
+                  .follower-post-box-header-img {
+                    margin: 0 6px 0 0;
+                    a {
+                      img {
+                        @include size(32px, 32px);
+                        border-radius: 50%;
+                      }
+                    }
+                  }
+                  .follower-post-box-header-title {
+                    a {
+                      @include font(14px, 600, $black);
+                      margin: 0;
+                      position: relative;
+                      &:hover::before {
+                        @include absolute(15px, auto, auto, 0);
+                        @include size(100%, 1px);
+                        content: "";
+                        background-color: $black;
+                      }
+                    }
+                    p {
+                      @include font(12px, 400, $black);
+                    }
+                  }
+                  .follower-post-box-header-options {
+                    button {
+                      @include absolute(50%, 0, auto, auto);
+                      transform: translateY(-50%);
+                      background-color: $white;
+                      padding: 8px;
+                      margin: 0 8px 0 0;
+                    }
+                  }
+                  .follower-post-box-header-dropdown {
+                    @include absolute(60px, auto, auto, 8px);
+                    @include size(390px, 354px);
+                    border: $main-border;
+                    box-shadow: $box-shadow;
+                    background-color: $white;
+                    display: none;
+                    z-index: 1;
+                    border-radius: 15px;
+
+                    .follower-post-box-header-dropdown-img {
+                      @include flex(unset, center);
+                      flex-direction: row;
+                      padding: 16px;
+                      &:first-child {
+                        img {
+                          @include size(56px, 56px);
+                          margin: 0 12px 0 0;
+                          border-radius: 50%;
+                        }
+                      }
+                      div {
+                        a {
+                          @include font(14px, 600, $black);
+                        }
+                        p {
+                          @include font(14px, 400, $gray);
+                          a {
+                            @include font(14px, 400, $link-color);
+                          }
+                        }
+                      }
+                    }
+                    .follower-post-box-header-dropdown-follower {
+                      @include flex(space-evenly, center);
+                      @include font(14px, 600, $black);
+                      @include size(auto, 68px);
+                      border: $main-border;
+                      position: relative;
+                      text-align: center;
+                      p {
+                        @include font(14px, 600, $black);
+                      }
+                      div {
+                        :last-child {
+                          @include font(14px, 400, $gray);
+                        }
+                      }
+                    }
+                    .follower-post-box-header-dropdown-post {
+                      display: flex;
+                      flex-direction: row;
+                      a {
+                        @include size(130px, 130px);
+                        @include overflow(hidden, hidden);
+                        img {
+                          @include size(100%, auto);
+                          &:hover {
+                            filter: brightness(0.8);
+                          }
+                        }
+                      }
+                    }
+                    .follower-post-box-header-dropdown-follow {
+                      padding: 16px;
+                      button {
+                        @include font(14px, 600, $black);
+                        @include size(49%, auto);
+                        padding: 3px 0;
+                        border: $main-border;
+                        border-radius: 5px;
+                      }
+                    }
+                  }
+                }
+                .follower-post-box-media {
+                  @include overflow(hidden, hidden);
+                  position: relative;
+                  .follower-post-box-media-img {
+                    position: relative;
+                    display: flex;
+                    flex-direction: row;
+                    img {
+                      @include size(580px, auto);
+                      transition: transform 0.3s ease;
+                      max-height: 1108px;
+                    }
+                  }
+                  .follower-post-box-media-scroll {
+                    .left-scroll {
+                      @include absolute(50%, auto, auto, 0);
+                      @include flex(center, center);
+                      @include size(44px, 44px);
+                      transform: translateY(-50%);
+                      padding: 10px;
+                      cursor: pointer;
+                      .left-scroll-inner {
+                        @include flex(center, center);
+                        @include size(24px, 24px);
+                        background-color: rgba(255, 255, 255, 0.75);
+                        box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.4);
+                        border-radius: 50%;
+                      }
+                    }
+                    .right-scroll {
+                      @include absolute(50%, 0, auto, auto);
+                      @include flex(center, center);
+                      @include size(44px, 44px);
+                      transform: translateY(-50%);
+                      padding: 10px;
+                      cursor: pointer;
+                      .right-scroll-inner {
+                        @include flex(center, center);
+                        @include size(24px, 24px);
+                        background-color: rgba(255, 255, 255, 0.75);
+                        box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.4);
+                        border-radius: 50%;
+                      }
+                    }
+                  }
+                }
+                .follower-post-box-circle {
+                  @include flex(center, center);
+                  margin: 10px 0 0 0;
+                  div {
+                    @include size(6px, 6px);
+                    border-radius: 50%;
+                    background-color: #a8a8a8;
+                    margin-right: 4px;
+                    transition: all 0.2s ease;
+                  }
+                  .active {
+                    background-color: $blue;
+                  }
+                }
+                .follower-post-box-like {
+                  @include flex(space-between, center);
+                  .follower-post-box-like-comment {
+                    padding: 0px 8px 4px 8px;
+                    button {
+                      padding: 0 8px 8px 8px;
+                    }
+                    .follower-post-box-like-comment-button-like {
+                      position: relative;
+
+                      .follower-post-box-like-comment-button-like-1 {
+                        opacity: 1;
+                        position: absolute;
+                        transform: scale(1.02);
+                      }
+                      .follower-post-box-like-comment-button-like-2 {
+                        opacity: 1;
+                      }
+                    }
+                  }
+                  .follower-post-box-like-save {
+                    position: relative;
+                    padding: 0px 8px 4px 8px;
+                    .follower-post-box-like-save-popup {
+                      display: none;
+                      .follower-post-box-like-save-popup-triangle-1,
+                      .follower-post-box-like-save-popup-triangle-2 {
+                        @include absolute(-23px, auto, auto, 50%);
+                        @include size(16px, 16px);
+                        box-shadow: $box-shadow;
+                        background-color: $white;
+                        transform: rotate(45deg) translate(-50%, 0);
+                      }
+                      .follower-post-box-like-save-popup-triangle-2 {
+                        z-index: 3;
+                        box-shadow: none;
+                      }
+                      .follower-post-box-like-save-popup-inner {
+                        @include absolute(-300px, auto, auto, 50%);
+                        @include size(260px, 280px);
+                        box-shadow: $box-shadow;
+                        background-color: $white;
+                        transform: translateX(-50%);
+                        z-index: 1;
+                        border-radius: 6px;
+                        .follower-post-box-like-save-popup-header {
+                          @include flex(space-between, center);
+                          border-bottom: $main-border;
+                          padding: 8px 16px;
+                          span {
+                            @include font(16px, 600, $black);
+                          }
+                          button {
+                            padding: 8px 0 8px 8px;
+                          }
+                        }
+                        .follower-post-box-like-save-popup-body {
+                          @include overflow(hidden, scroll);
+                          max-height: 218px;
+                          .follower-post-box-like-save-popup-body-items {
+                            @include flex(start, center);
+                            background-color: $white;
+                            width: 100%;
+                            max-height: 50px;
+                            padding: 8px 16px;
+                            .follower-post-box-like-save-popup-body-items-img {
+                              @include size(32px, 32px);
+                              overflow: hidden;
+                              border-radius: 6px;
+                              margin: 0 8px 0 0;
+                              img {
+                                @include size(32px, auto);
+                              }
+                            }
+                            &:hover {
+                              background-color: $body-color;
+                            }
+                          }
+                        }
+                      }
+                    }
+
+                    button {
+                      padding: 0 8px 8px 8px;
+                    }
+                    .follower-post-box-like-comment-button-save {
+                      .follower-post-box-like-comment-button-save-1 {
+                        display: none;
+                        top: 1px;
+                        opacity: 1;
+                        position: absolute;
+                      }
+                      .follower-post-box-like-comment-button-save-2 {
+                        opacity: 1;
+                      }
+                    }
+                  }
+                }
+                .follower-post-box-liked-by {
+                  @include flex(start, center);
+                  padding: 0 16px;
+                  margin: 0 0 8px 0;
+
+                  p {
+                    font-size: 14px;
+                  }
+                  img {
+                    @include size(24px, 24px);
+                    border-radius: 50%;
+                    margin-right: 5px;
+                  }
+                }
+                .follower-post-box-caption {
+                  margin: 0 auto;
+                  padding: 0 16px;
+                  font-size: 14px;
+                  a {
+                    color: $link-color;
+                  }
+                  div {
+                    .follower-post-box-caption-account-name {
+                      a {
+                        @include font(14px, 600, $black);
+                        padding: 0 2px 0 0;
+                      }
+                    }
+                    button {
+                      color: #8e8e8e;
+                    }
+                    .follower-post-box-caption-totall-caption {
+                      display: none;
+                    }
+                    .follower-post-box-caption-see-comments {
+                      a {
+                        color: #8e8e8e;
+                        span {
+                          color: #8e8e8e;
+                        }
+                      }
+                    }
+                    .follower-post-box-caption-post-time {
+                      font-size: 10px;
+                      padding: 4px 0 0 0;
+                      margin: 0 0 16px 0;
+                      line-height: 18px;
+                      color: #8e8e8e;
+                      text-transform: uppercase;
+                    }
+                  }
+                }
+                .follower-post-box-comment {
+                  @include flex(unset, center);
+                  position: relative;
+                  flex-direction: row;
+                  padding: 6px 12px;
+                  border-top: 1px solid #efefef;
+                  #emoji {
+                    padding: 0;
+                  }
+                  textarea {
+                    outline: 0;
+                    resize: none;
+                    height: 16px;
+                    overflow-y: scroll;
+                    font-size: 14px;
+                    border: 0;
+                    &::placeholder {
+                      @include font(14px, 400, $black);
+                      line-height: 16px;
+                      padding: 0;
+                    }
+                  }
+                  span {
+                    @include absolute(auto, 16px, auto, auto);
+                    @include font(14px, 600, #7fcafa);
+                    cursor: default;
+                  }
+                  .active {
+                    @include font(14px, 600, $blue);
+                    cursor: pointer;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

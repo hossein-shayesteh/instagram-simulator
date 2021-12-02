@@ -1,32 +1,18 @@
 body {
-  background-color: #fafafa;
-  // font-family: "Helvetica Neue", Arial, sans-serif;
-  // font-family: "Helvetica 25 UltraLight", Arial, sans-serif;
-  // font-family: "Helvetica 35 Thin", Arial, sans-serif;
-  // font-family: "Helvetica 45 Light", Arial, sans-serif;
+  background-color: $body-color;
   font-family: "Helvetica 55 Roman", Arial, sans-serif;
-  // font-family: "Helvetica 65 Medium", Arial, sans-serif;
   .loading-screen {
-    width: 99vw;
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    overflow: hidden;
-    position: fixed;
-    height: 100vh;
-    background-color: #ffffff;
+    @include flex();
+    @include fixed(0, 0, 0, 0);
+    @include size(99vw, 100vh);
+    @include overflow(hidden, hidden);
+    background-color: $white;
     z-index: 999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     i {
-      color: #c7c7c7;
-      font-size: 56px;
+      @include font(56px, 400, #c7c7c7);
     }
   }
 }
 .no-scroll {
-  overflow-y: hidden;
+  @include overflow(auto, hidden);
 }

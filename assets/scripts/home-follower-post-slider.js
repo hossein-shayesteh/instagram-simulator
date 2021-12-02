@@ -3,7 +3,7 @@ $(document).ready(function () {
   //               home                //
   //            posts slider           //
   ///////////////////////////////////////
-  //scroll to left
+  //click on scroll to right
   var i = 0;
   $(".left-scroll").hide();
   $(".right-scroll").click(function (e) {
@@ -17,23 +17,33 @@ $(document).ready(function () {
       .children();
     x.css("transform", "translateX(" + CountToLeft + "px)");
     var SliderLength = x.length;
-    // show or hide scroll buttum
-    //left
+    // show or hide scroll buttons
+    //left scroll button
     if (i == 0) {
       $(".left-scroll").hide();
     }
     if (i > 0) {
       $(".left-scroll").show();
     }
-    //right
+    //right scroll button
     if (i == SliderLength - 1) {
       $(".right-scroll").hide();
     }
     if (i < SliderLength - 1) {
       $(".right-scroll").show();
     }
+    //followers image circles
+    $(".follower-post-box-circle")
+      .children(":nth-child(" + (i + 1) + ")")
+      .addClass("active");
+    $(".follower-post-box-circle")
+      .children(":nth-child(" + i + ")")
+      .removeClass("active");
+    $(".follower-post-box-circle")
+      .children(":nth-child(" + (i + 2) + ")")
+      .removeClass("active");
   });
-  //scroll to right
+  //click on scroll to left
   $(".left-scroll").click(function (e) {
     e.preventDefault();
     //our variabels
@@ -46,19 +56,29 @@ $(document).ready(function () {
     x.css("transform", "translateX(" + CountToLeft + "px)");
     var SliderLength = x.length;
     // show or hide scroll buttum
-    //left
+    //left scroll button
     if (i == 0) {
       $(".left-scroll").hide();
     }
     if (i > 0) {
       $(".left-scroll").show();
     }
-    //right
+    //right scroll button
     if (i == SliderLength - 1) {
       $(".right-scroll").hide();
     }
     if (i < SliderLength - 1) {
       $(".right-scroll").show();
     }
+    //followers image circles
+    $(".follower-post-box-circle")
+      .children(":nth-child(" + (i + 1) + ")")
+      .addClass("active");
+    $(".follower-post-box-circle")
+      .children(":nth-child(" + i + ")")
+      .removeClass("active");
+    $(".follower-post-box-circle")
+      .children(":nth-child(" + (i + 2) + ")")
+      .removeClass("active");
   });
 });

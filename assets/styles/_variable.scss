@@ -1,12 +1,9 @@
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-i,
-span {
-  color: #262626;
-}
+$white: #fff;
+$black: #262626;
+$gray: #909090;
+$blue: #0095f6;
+$red: #ed4956;
 $link-color: #003a69;
+$body-color: #fafafa;
+$main-border: 1px solid #dbdbdb;
+$box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.15);

@@ -1,0 +1,397 @@
+.modals {
+  @include fixed(0, 0, 0, 0);
+  @include size(100vw, 100vh);
+  display: none;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.65);
+  .modal-inner {
+    @include size(100%, 100%);
+    @include flex(center, center);
+    position: relative;
+  }
+  .modal-bg {
+    @include absolute(0, 0, 0, 0);
+    @include size(100%, 100%);
+    z-index: 1;
+    background-color: transparent;
+  }
+}
+.dot-modal {
+  .otions {
+    @include font(14px, 400, $black);
+    @include size(400px, auto);
+    background-color: $white;
+    z-index: 2;
+    border-radius: 12px;
+    button {
+      @include size(100%, auto);
+      border-bottom: $main-border;
+      min-height: 48px;
+      line-height: 1.5;
+      padding: 4px 8px;
+      text-align: center;
+      a {
+        color: $black;
+        padding: 15px 150px;
+      }
+      &:last-child {
+        border-bottom: 0;
+        &:active {
+          border-radius: 0 0 12px 12px;
+        }
+      }
+      &:nth-child(1) {
+        @include font(14px, 700, $red);
+        &:active {
+          border-radius: 12px 12px 0 0;
+        }
+      }
+      &:nth-child(2) {
+        @include font(14px, 700, $red);
+      }
+      &:active {
+        background-color: #e4e4e2;
+      }
+    }
+  }
+  .report-box {
+    @include font(14px, 400, $black);
+    @include size(400px, auto);
+    background-color: $white;
+    border-radius: 12px;
+    display: none;
+    z-index: 2;
+    min-height: 300px;
+    button {
+      @include flex(space-between, center);
+      @include size(100%, auto);
+      border-bottom: $main-border;
+      position: relative;
+      text-align: left;
+      line-height: 1.5;
+      min-height: 48px;
+      padding: 4px 16px;
+      i {
+        color: #dedede;
+      }
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+    .otions-header {
+      @include flex(space-between, center);
+      @include size(100%, 40px);
+      border-bottom: $main-border;
+      div {
+        min-width: 50px;
+        &:nth-child(2) {
+          @include font(16px, 600, $black);
+        }
+      }
+      .close-modal {
+        @include size(56px, auto);
+      }
+      button {
+        padding: 0 16px;
+      }
+    }
+    .title {
+      @include font(16px, 600, $black);
+      cursor: default;
+    }
+  }
+  .unfollow-box {
+    display: none;
+    .otions {
+      @include size(400px, auto);
+      background-color: $white;
+      z-index: 2;
+      border-radius: 12px;
+      font-size: 14px;
+      button {
+        &:nth-child(1) {
+          &:active {
+            border-radius: 0;
+          }
+        }
+      }
+      .otions-body {
+        text-align: center;
+        padding: 16px 32px;
+      }
+      .otions-footer {
+        button {
+          @include size(100%, auto);
+          border: 0;
+          line-height: 1.5;
+          margin: 0;
+          min-height: 48px;
+          padding: 4px 8px;
+          text-align: center;
+          &:nth-child(1),
+          &:nth-child(2) {
+            @include font(14px, 700, $red);
+            border-top: $main-border;
+          }
+        }
+      }
+    }
+  }
+  .share-box {
+    @include size(400px, auto);
+    background-color: $white;
+    border-radius: 12px;
+    display: none;
+    z-index: 2;
+    font-size: 14px;
+    button {
+      @include flex(unset, center);
+      @include font(14px, 600, $black);
+      @include size(100%, 48px);
+      text-align: left;
+      line-height: 1.5;
+      padding: 8px 16px;
+      &:hover {
+        background-color: $body-color;
+      }
+      &:active {
+        background-color: #e4e4e2;
+      }
+      i {
+        @include font(24px, 0, #808080);
+        margin: 0 16px 0 0;
+      }
+    }
+    .close-modal {
+      padding: 0 0 0 56px;
+      &:active,
+      &:hover {
+        border-radius: 0 0 12px 12px;
+      }
+    }
+
+    .otions-header {
+      @include flex(space-between, center);
+      border-bottom: $main-border;
+      height: 40px;
+      div {
+        min-width: 50px;
+        &:nth-child(2) {
+          @include font(16px, 600, $black);
+          text-align: center;
+        }
+      }
+      .close-modal {
+        width: 56px;
+        &:hover,
+        &:active {
+          background-color: transparent !important;
+        }
+      }
+      button {
+        padding: 0 16px;
+      }
+    }
+  }
+  .embeded-box {
+    display: none;
+    .otions {
+      @include size(400px, auto);
+      background-color: $white;
+      z-index: 2;
+      border-radius: 12px;
+      padding: 16px;
+      font-size: 14px;
+      textarea {
+        @include size(100%, auto);
+        border: $main-border;
+        resize: none;
+        outline: none;
+      }
+      label {
+        margin: 4px 0;
+        input {
+          margin-right: 4px;
+        }
+      }
+      button {
+        @include font(14px, 600, $white);
+        @include size(100%, auto);
+        background-color: $blue;
+        min-height: 30px;
+        padding: 4px 0;
+        border-radius: 5px;
+        &:active {
+          border-radius: 5px;
+          background-color: #49b5f5;
+        }
+      }
+      p {
+        @include font(12px, 400, #8e8e8e);
+        padding: 5px 0 0 0;
+        a {
+          color: $link-color;
+        }
+      }
+    }
+  }
+}
+.send-modal {
+  .otions {
+    z-index: 2;
+    width: 550px;
+    min-height: 550px;
+    background-color: #fff;
+    border-radius: 12px;
+    font-size: 14px;
+    .otions-header {
+      height: 40px;
+      border-bottom: 1px solid rgb(219, 219, 219);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      div {
+        min-width: 50px;
+        &:nth-child(2) {
+          font-size: 16px;
+          font-weight: 600;
+          text-align: center;
+        }
+      }
+      button {
+        padding: 0 16px;
+      }
+    }
+    .otions-search {
+      border-bottom: 1px solid rgb(219, 219, 219);
+      height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      span {
+        padding: 0 12px;
+        font-size: 16px;
+        font-weight: 600;
+      }
+      input {
+        outline: 0;
+        border: 0;
+        width: 100%;
+        padding-right: 12px;
+      }
+    }
+    .otions-Suggested {
+      height: 415px;
+      overflow-y: scroll;
+      padding: 8px 16px 0 16px;
+      span {
+        font-weight: 600;
+      }
+      .Suggested-followers {
+        padding: 8px 0;
+        label {
+          position: relative;
+          width: 100%;
+          height: 60px;
+          display: flex;
+
+          align-items: center;
+          img {
+            width: 44px;
+            height: 44px;
+            border-radius: 100%;
+          }
+          div {
+            padding-left: 8px;
+            font-size: 14px;
+            span {
+              font-weight: 600;
+            }
+            p {
+              color: #8e8e8e;
+              margin: 0;
+            }
+          }
+          input {
+            border-radius: 100%;
+            width: 24px;
+            height: 24px;
+            position: absolute;
+            right: 0;
+          }
+        }
+      }
+    }
+    .otions-send {
+      min-height: 75px;
+      border-top: 1px solid rgb(219, 219, 219);
+      padding: 16px;
+      input {
+        height: 42px;
+        width: 100%;
+        border: 0;
+        padding: 0 20px 20px 20px;
+      }
+      button {
+        width: 100%;
+        height: 43px;
+        background-color: #0095f6;
+        color: #fff;
+        font-weight: 600;
+        border-radius: 4px;
+      }
+    }
+  }
+}
+.add-collections {
+  .otions {
+    @include size(400px, auto);
+    @include font(14px, 400, $black);
+    background-color: $white;
+    z-index: 2;
+    border-radius: 12px;
+    .otions-header {
+      @include flex(space-between, center);
+      border-bottom: $main-border;
+      height: 40px;
+      div {
+        min-width: 50px;
+        &:nth-child(2) {
+          @include font(16px, 600, $black);
+        }
+      }
+      button {
+        padding: 0 16px;
+      }
+    }
+    .otions-body {
+      @include overflow(hidden, scroll);
+      @include size(100%, auto);
+      padding: 20px;
+      .otions-body-item {
+        @include flex(unset, center);
+        flex-direction: column;
+        img {
+          @include size(100px, 100px);
+          border-radius: 6px;
+        }
+
+        input {
+          @include size(100%, 40px);
+          border: $main-border;
+          background-color: $body-color;
+          margin: 20px 20px 0 20px;
+          border-radius: 6px;
+          padding: 4px 12px;
+        }
+      }
+    }
+    .save {
+      @include size(100%, 48px);
+      @include font(14px, 600, #8e8e8e);
+      border-radius: 0 0 12px 12px;
+      border-top: $main-border;
+      background-color: $white;
+    }
+  }
+}
