@@ -1,5 +1,6 @@
 main {
   .wrapper {
+    margin: auto;
     .main-section {
       @include size(100%, auto);
       display: none;
@@ -12,11 +13,11 @@ main {
             @include size(100%, auto);
             max-width: 580px;
             float: left;
-            margin: 80px 0 0 0;
+            margin: 75px 0 0 0;
 
             .follower-post {
               .follower-post-box {
-                margin: 24px 0 0 0;
+                margin: 22px 0 0 0;
                 border-radius: 3px;
                 background-color: $white;
                 border: $main-border;

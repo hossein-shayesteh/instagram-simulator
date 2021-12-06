@@ -1,7 +1,7 @@
 $(document).ready(function () {
   // switch account modal//
   //show
-  $(".switch-account-switch > a").click(function (e) {
+  $(".switch-account-switch > a ,.direct-switch-account").click(function (e) {
     e.preventDefault();
     $(".switch-account-modal").fadeIn("fast");
     //fixing screen from scrolling
@@ -38,13 +38,13 @@ $(document).ready(function () {
       $(".suggestions-for-you-list-items-follow-1")
         .children("a")
         .hide()
-        .delay(1500)
+        .delay(1300)
         .show(0);
       //show loading
       $(".suggestions-for-you-list-items-follow-1")
         .children(".loading")
         .show()
-        .delay(1500)
+        .delay(1300)
         .hide(0);
       //show followed text
       $(".suggestions-for-you-list-items-follow-1")
@@ -63,7 +63,7 @@ $(document).ready(function () {
       $(".suggestions-for-you-list-items-follow-1")
         .siblings(".suggestions-for-you-list-dropdown")
         .children(".follower-post-box-header-dropdown-follow")
-        .delay(1500)
+        .delay(1300)
         .show(0);
     }
     if (FollowText == "Followed") {
@@ -103,12 +103,12 @@ $(document).ready(function () {
       $(".suggestions-for-you-list-items-follow-2")
         .children("a")
         .hide()
-        .delay(1500)
+        .delay(1300)
         .show(0);
       $(".suggestions-for-you-list-items-follow-2")
         .children(".loading")
         .show()
-        .delay(1500)
+        .delay(1300)
         .hide(0);
       $(".suggestions-for-you-list-items-follow-2")
         .children("a")
@@ -123,7 +123,7 @@ $(document).ready(function () {
       $(".suggestions-for-you-list-items-follow-2")
         .siblings(".suggestions-for-you-list-dropdown")
         .children(".follower-post-box-header-dropdown-follow")
-        .delay(1500)
+        .delay(1300)
         .show(0);
     }
     if (FollowText == "Followed") {
@@ -163,12 +163,12 @@ $(document).ready(function () {
       $(".suggestions-for-you-list-items-follow-3")
         .children("a")
         .hide()
-        .delay(1500)
+        .delay(1300)
         .show(0);
       $(".suggestions-for-you-list-items-follow-3")
         .children(".loading")
         .show()
-        .delay(1500)
+        .delay(1300)
         .hide(0);
       $(".suggestions-for-you-list-items-follow-3")
         .children("a")
@@ -183,7 +183,7 @@ $(document).ready(function () {
       $(".suggestions-for-you-list-items-follow-3")
         .siblings(".suggestions-for-you-list-dropdown")
         .children(".follower-post-box-header-dropdown-follow")
-        .delay(1500)
+        .delay(1300)
         .show(0);
     }
     if (FollowText == "Followed") {
@@ -223,12 +223,12 @@ $(document).ready(function () {
       $(".suggestions-for-you-list-items-follow-4")
         .children("a")
         .hide()
-        .delay(1500)
+        .delay(1300)
         .show(0);
       $(".suggestions-for-you-list-items-follow-4")
         .children(".loading")
         .show()
-        .delay(1500)
+        .delay(1300)
         .hide(0);
       $(".suggestions-for-you-list-items-follow-4")
         .children("a")
@@ -243,7 +243,7 @@ $(document).ready(function () {
       $(".suggestions-for-you-list-items-follow-4")
         .siblings(".suggestions-for-you-list-dropdown")
         .children(".follower-post-box-header-dropdown-follow")
-        .delay(1500)
+        .delay(1300)
         .show(0);
     }
     if (FollowText == "Followed") {

@@ -1,7 +1,7 @@
 #home {
   .suggestions-for-you {
     .suggestions-for-you-inner {
-      @include fixed(80px, auto, 0, 1102.5px);
+      @include fixed(75px, auto, 0, 1102.5px);
       @include size(293px, 100vh);
       .switch-account {
         @include size(100%, auto);

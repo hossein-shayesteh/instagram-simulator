@@ -1,3 +1,341 @@
 #direct {
   background-color: red;
+  display: block;
+  .direct-inner {
+    @include fixed(75px, auto, 22px, 300px);
+    @include size(100%, auto);
+    background-color: $white;
+    border: $main-border;
+    border-radius: 3px;
+    max-width: 900px;
+    display: flex;
+    flex-direction: row;
+    .message-list {
+      @include size(349px, auto);
+      border-right: $main-border;
+      .message-list-title {
+        @include flex(space-between, center);
+        @include size(100%, 60px);
+        border-bottom: $main-border;
+        padding: 0 20px;
+        div {
+          min-width: 32px;
+          button {
+            @include flex(unset, center);
+            @include font(16px, 600, $black);
+            i {
+              padding: 8px;
+            }
+          }
+        }
+      }
+      .message-list-item-wrapper {
+        @include size(100%, calc(100% - 60px));
+        @include overflow(hidden, scroll);
+        padding: 8px 0;
+        .message-list-items {
+          @include flex(flex-start, center);
+          @include size(100%, 72px);
+          padding: 8px 20px;
+          cursor: pointer;
+          &:hover {
+            background-color: $body-color;
+          }
+
+          .message-list-items-img {
+            img {
+              @include size(56px, 56px);
+              border: $main-border;
+              border-radius: 50%;
+            }
+          }
+          .message-list-items-title {
+            margin-left: 12px;
+            h6 {
+              @include font(14px, 400, $black);
+              .validitation {
+                @include size(12px, 12px);
+                margin: 0 0 0 4px;
+              }
+            }
+            p {
+              @include font(14px, 400, #8e8e8e);
+              .last-message-dot {
+                vertical-align: 2px;
+              }
+              .last-message-time {
+                @include font(14px, 400, #8e8e8e);
+              }
+            }
+          }
+        }
+        .active {
+          background-color: #efefef;
+          cursor: default;
+          &:hover {
+            background-color: #efefef;
+            cursor: default;
+          }
+        }
+      }
+    }
+    .message-box {
+      @include size(549px, 100%);
+      .message-box-default {
+        @include flex(center, center);
+        @include size(100%, 100%);
+        flex-direction: column;
+        img {
+          @include size(96px, 96px);
+        }
+        h2 {
+          @include font(22px, 400, $black);
+          margin: 12px 0;
+        }
+        p {
+          @include font(14px, 400, #8e8e8e);
+        }
+        button {
+          @include font(14px, 600, $white);
+          background-color: $blue;
+          margin: 24px 0 0 0;
+          padding: 5px 9px;
+          border-radius: 4px;
+          text-align: center;
+        }
+      }
+      .message-box-items {
+        @include size(100%, 100%);
+        display: flex;
+        flex-direction: column;
+        position: relative;
+
+        .message-box-items-title {
+          @include flex(unset, center);
+          @include size(100%, 60px);
+          border-bottom: $main-border;
+          flex: 0 1 auto;
+          position: relative;
+          padding: 0 20px;
+          img {
+            @include size(24px, 24px);
+            border-radius: 50%;
+            margin: 0 0 0 16px;
+          }
+          div {
+            @include font(16px, 600, $black);
+            margin: 0 0 0 12px;
+            cursor: pointer;
+          }
+          button {
+            @include absolute(auto, 20px, auto, auto);
+            padding: 8px;
+          }
+        }
+        .message-box-items-body {
+          overflow-y: scroll;
+          flex: 1 1 auto;
+          .chat-time {
+            @include size(100%, 47px);
+            @include font(12px, 400, #8e8e8e);
+            text-align: center;
+            line-height: 47px;
+          }
+          .chat-me {
+            @include size(100%, auto);
+            @include flex(end, center);
+            padding: 0 20px;
+            margin: 0 0 8px 0;
+            .chat-me-options {
+              opacity: 0;
+              position: relative;
+              i {
+                @include font(14px, 0, #8e8e8e);
+                padding: 8px;
+                transition: all 0.1s ease;
+                &:hover {
+                  color: $black;
+                }
+              }
+              .chat-me-options-popup-container {
+                z-index: 2;
+                display: none;
+                .chat-me-options-popup-triangle {
+                  @include absolute(
+                    calc(50% - 32px),
+                    calc(100% - 20px),
+                    auto,
+                    auto
+                  );
+                  @include size(15px, 15px);
+                  border-radius: 2px;
+                  background-color: #000;
+                  transform: rotate(45deg);
+                }
+                .chat-me-options-popup {
+                  @include absolute(
+                    calc(50% - 58px),
+                    calc(100% - 35px),
+                    auto,
+                    auto
+                  );
+                  @include size(150px, 35px);
+                  @include flex(space-between, center);
+                  border-radius: 8px;
+                  padding: 8px 12px;
+                  background-color: #000;
+                  box-shadow: rgba(0, 0, 0, 0.2) 0 4px 22px;
+                  z-index: 2;
+                  span {
+                    @include font(14px, 600, $white);
+                  }
+                }
+              }
+            }
+            .chat-me-box {
+              border: 1px solid #efefef;
+              max-width: 235px;
+              min-height: 44px;
+              background-color: #efefef;
+              padding: 12px;
+              border-radius: 22px;
+              line-height: 18px;
+              cursor: default;
+              margin-right: 8px;
+              .chat-me-text {
+                @include font(14px, 400, $black);
+                overflow-wrap: break-word;
+                white-space: normal;
+              }
+            }
+          }
+          .chat-not-me {
+            @include size(100%, auto);
+            @include flex(start, center);
+            padding: 0 20px;
+            margin: 0 0 8px 0;
+            .chat-not-me-avatar {
+              @include size(24px, 24px);
+              align-self: flex-end;
+              img {
+                @include size(24px, 24px);
+                border-radius: 50%;
+                border: 1px solid #efefef;
+              }
+            }
+            .chat-not-me-options {
+              opacity: 0;
+              position: relative;
+              i {
+                @include font(14px, 0, #8e8e8e);
+                padding: 8px;
+                transition: all 0.1s ease;
+                &:hover {
+                  color: $black;
+                }
+              }
+              .chat-not-me-options-popup-container {
+                display: none;
+                z-index: 2;
+                .chat-not-me-options-popup-triangle {
+                  @include absolute(
+                    calc(50% - 32px),
+                    auto,
+                    auto,
+                    calc(100% - 20px)
+                  );
+                  @include size(15px, 15px);
+                  border-radius: 2px;
+                  background-color: #000;
+                  transform: rotate(45deg);
+                }
+                .chat-not-me-options-popup {
+                  @include absolute(
+                    calc(50% - 58px),
+                    auto,
+                    auto,
+                    calc(100% - 35px)
+                  );
+                  @include size(150px, 35px);
+                  @include flex(space-between, center);
+                  border-radius: 8px;
+                  padding: 8px 12px;
+                  background-color: #000;
+                  box-shadow: rgba(0, 0, 0, 0.2) 0 4px 22px;
+                  z-index: 2;
+                  span {
+                    @include font(14px, 600, $white);
+                  }
+                }
+              }
+            }
+            .chat-not-me-box {
+              border: 1px solid #efefef;
+              max-width: 235px;
+              min-height: 44px;
+              background-color: $white;
+              padding: 12px;
+              border-radius: 22px;
+              line-height: 18px;
+              cursor: default;
+              margin-left: 8px;
+              .chat-not-me-text {
+                @include font(14px, 400, $black);
+                overflow-wrap: break-word;
+                white-space: normal;
+              }
+            }
+          }
+        }
+        .message-box-items-footer {
+          @include size(100%, 84px);
+          flex: 0 1 auto;
+          padding: 20px;
+          .message-box-items-footer-input {
+            @include flex(unset, center);
+            @include size(100%, 44px);
+            border: $main-border;
+            flex-direction: row;
+            border-radius: 22px;
+            padding: 0 8px 0 11px;
+            .message-box-items-footer-input-emoji-picker {
+              padding: 8px;
+            }
+            .message-box-items-footer-input-textarea {
+              @include size(100%, 18px);
+              @include font(14px, 400, $black);
+              line-height: 18px;
+              border: 0;
+              overflow: auto;
+              padding: 8px 9px;
+              resize: none;
+              outline: 0;
+              &::placeholder {
+                @include font(14px, 400, $black);
+                line-height: 0px;
+              }
+            }
+            .message-box-items-footer-input-upload-images {
+              padding: 8px;
+              cursor: pointer;
+              input {
+                @include size(0.01px, 0.01px);
+                opacity: 0;
+                overflow: hidden;
+                position: absolute;
+                z-index: -1;
+              }
+            }
+            .message-box-items-footer-input-sent-like {
+              padding: 8px;
+            }
+            .message-box-items-footer-input-sent {
+              @include font(14px, 600, $blue);
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
 }
