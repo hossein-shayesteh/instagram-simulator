@@ -1,5 +1,4 @@
 #direct {
-  display: block;
   .direct-inner {
     @include fixed(75px, auto, 22px, 300px);
     @include size(100%, auto);
@@ -409,8 +408,11 @@
           border-bottom: $main-border;
           flex-direction: column;
           padding: 0 16px;
+
           button {
             @include font(14px, 400, $red);
+            width: 100%;
+            text-align: start;
           }
         }
       }
