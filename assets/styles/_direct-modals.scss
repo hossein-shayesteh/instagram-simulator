@@ -90,3 +90,123 @@
     }
   }
 }
+.delete-chat-modal {
+  .otions {
+    @include size(400px, auto);
+    @include font(14px, 400, $black);
+    background-color: $white;
+    z-index: 2;
+    border-radius: 12px;
+    .otions-body {
+      @include size(100%, 125px);
+      padding: 28px 16px;
+      h3 {
+        @include font(18px, 600, $black);
+        text-align: center;
+      }
+      p {
+        @include font(14px, 400, #8e8e8e);
+        padding-top: 8px;
+        text-align: center;
+      }
+    }
+    .otions-footer {
+      @include flex(center, center);
+      flex-direction: column;
+      button {
+        @include font(14px, 400, $black);
+        @include size(100%, 48px);
+        border-top: $main-border;
+        padding: 4px 8px;
+        &:first-child {
+          @include font(14px, 600, $red);
+        }
+      }
+    }
+  }
+}
+.block-chat-modal {
+  .otions {
+    @include size(400px, auto);
+    @include font(14px, 400, $black);
+    background-color: $white;
+    z-index: 2;
+    border-radius: 12px;
+    .otions-body {
+      @include size(100%, 125px);
+      padding: 18px 16px;
+      h3 {
+        @include font(18px, 600, $black);
+        text-align: center;
+      }
+      p {
+        @include font(14px, 400, #8e8e8e);
+        padding-top: 8px;
+        text-align: center;
+      }
+    }
+    .otions-footer {
+      @include flex(center, center);
+      flex-direction: column;
+      button {
+        @include font(14px, 400, $black);
+        @include size(100%, 48px);
+        border-top: $main-border;
+        padding: 4px 8px;
+        &:first-child {
+          @include font(14px, 600, $red);
+        }
+      }
+    }
+  }
+}
+.report-chat-modal {
+  .otions {
+    @include size(550px, 365px);
+    @include font(14px, 400, $black);
+    background-color: $white;
+    z-index: 2;
+    border-radius: 12px;
+    .otions-header {
+      @include flex(space-between, center);
+      border-bottom: $main-border;
+      height: 40px;
+      div {
+        min-width: 50px;
+        &:nth-child(2) {
+          @include font(16px, 600, $black);
+        }
+      }
+      button {
+        padding: 0 16px;
+      }
+    }
+    .otions-body {
+      @include size(100%, auto);
+      padding: 16px 16px 0 16px;
+      p {
+        @include font(14px, 400, #8e8e8e);
+        padding: 16px 0;
+        strong {
+          @include font(14px, 600, $black);
+        }
+      }
+    }
+    .otions-footer {
+      padding: 0 16px 16px 16px;
+      button {
+        position: relative;
+        @include flex(start, center);
+        @include font(16px, 400, $black);
+        @include size(100%, 44px);
+        &:hover {
+          background-color: #efefef;
+        }
+        i {
+          @include absolute(auto, 8px, auto, auto);
+          color: #8e8e8e;
+        }
+      }
+    }
+  }
+}

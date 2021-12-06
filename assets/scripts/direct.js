@@ -14,7 +14,8 @@ $(document).ready(function () {
     //remove active class from its siblings
     $(this).siblings().removeClass("active");
   });
-  $(".message-box-items").hide();
+  // click on message list to show its message box
+  $(".message-box-items,.message-box-items-alt").hide();
   $("#message-list-1").click(function (e) {
     e.preventDefault();
     $("#message-box-1").delay(500).show(0);
@@ -75,6 +76,19 @@ $(document).ready(function () {
     $("#message-box-12").delay(500).show(0);
     $("#message-box-12").siblings().delay(500).hide(0);
   });
+  //show message box details
+  //show details
+  $(".alt-button-1").click(function (e) {
+    e.preventDefault();
+    $(this).parents(".message-box-items").hide();
+    $(this).parents(".message-box-items").next(".message-box-items-alt").show();
+  });
+  //hide details
+  $(".alt-button-2").click(function (e) {
+    e.preventDefault();
+    $(this).parents(".message-box-items-alt").hide();
+    $(this).parents(".message-box-items-alt").prev(".message-box-items").show();
+  });
   ////////////////////////////////
   //          send box          //
   ////////////////////////////////
@@ -122,8 +136,8 @@ $(document).ready(function () {
         ".chat-me-options-popup-container,.chat-not-me-options-popup-container"
       )
       .fadeIn();
-    $(".message-box-items-bg ").show();
   });
+  //when click on outside the pupop the popup will hide
   $(document).mousedown(function (e) {
     if (
       $(e.target).parents(

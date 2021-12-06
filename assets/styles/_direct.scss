@@ -1,5 +1,4 @@
 #direct {
-  background-color: red;
   display: block;
   .direct-inner {
     @include fixed(75px, auto, 22px, 300px);
@@ -121,6 +120,7 @@
             @include size(24px, 24px);
             border-radius: 50%;
             margin: 0 0 0 16px;
+            border: $main-border;
           }
           div {
             @include font(16px, 600, $black);
@@ -333,6 +333,84 @@
               @include font(14px, 600, $blue);
               display: none;
             }
+          }
+        }
+      }
+      .message-box-items-alt {
+        @include size(100%, 100%);
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        .message-box-items-alt-title {
+          @include flex(space-between, center);
+          @include size(100%, 60px);
+          border-bottom: $main-border;
+          flex: 0 1 auto;
+          position: relative;
+          padding: 0 28px;
+          div {
+            @include font(16px, 600, $black);
+            min-width: 24px;
+            margin: 0 0 0 12px;
+            cursor: pointer;
+          }
+          .alt-button-2 {
+            padding: 8px 0 8px 8px;
+          }
+        }
+        .message-box-items-alt-body {
+          .message-box-items-alt-body-mute {
+            @include flex(unset, center);
+            @include size(100%, 53px);
+            border-bottom: $main-border;
+            padding: 0 16px;
+
+            label {
+              @include flex(unset, center);
+              @include font(14px, 400, $black);
+              input {
+                margin: 0 8px 0 3px;
+              }
+            }
+          }
+          .message-box-items-alt-body-members {
+            @include size(100%, 135px);
+            border-bottom: $main-border;
+            padding: 16px;
+            h4 {
+              @include font(16px, 600, $black);
+              margin: 4px 0;
+            }
+            .message-box-items-alt-body-members-inner {
+              @include flex(flex-start, center);
+              @include size(100%, 72px);
+              padding: 8px 0;
+              img {
+                @include size(56px, 56px);
+                border-radius: 50%;
+              }
+              .message-box-items-alt-body-members-descriptions {
+                flex-direction: column;
+                margin-left: 12px;
+                h5 {
+                  @include font(14px, 600, $black);
+                  cursor: pointer;
+                }
+                p {
+                  @include font(14px, 400, #8e8e8e);
+                }
+              }
+            }
+          }
+        }
+        .message-box-items-alt-footer {
+          @include flex(space-evenly, start);
+          @include size(100%, 135px);
+          border-bottom: $main-border;
+          flex-direction: column;
+          padding: 0 16px;
+          button {
+            @include font(14px, 400, $red);
           }
         }
       }
