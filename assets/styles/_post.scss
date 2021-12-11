@@ -1,0 +1,48 @@
+#post {
+  display: block;
+  .post-modal {
+    background-color: rgba(0, 0, 0, 0.85);
+    .modal-inner {
+      .otions {
+        @include size(650px, 700px);
+        @include font(14px, 400, $black);
+        background-color: $white;
+        z-index: 2;
+        border-radius: 12px;
+        .otions-header {
+          @include flex(center, center);
+          border-bottom: $main-border;
+          @include font(16px, 600, $black);
+          height: 40px;
+        }
+        .otions-body {
+          @include size(100%, 660px);
+          @include flex(center, center);
+          flex-direction: column;
+          h2 {
+            @include font(22px, 300, $black);
+            margin: 16px 0 24px 0;
+          }
+          label {
+            @include font(14px, 600, $white);
+            background-color: $blue;
+            border-radius: 4px;
+
+            padding: 5px 9px;
+            text-align: center;
+            cursor: pointer;
+            input {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+    .close-modal {
+      @include absolute(0, 0, auto, auto);
+      padding: 20px;
+      cursor: pointer;
+      z-index: 2;
+    }
+  }
+}
