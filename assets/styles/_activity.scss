@@ -1,0 +1,151 @@
+.activity-dropdown-section {
+  display: none;
+  .activity-dropdown-triangle,
+  .activity-dropdown-triangle2 {
+    @include size(16px, 16px);
+    @include absolute(auto, auto, auto, 50%);
+    box-shadow: $box-shadow;
+    background-color: $white;
+    margin: 10px 0 0 0;
+    transform: rotate(45deg) translate(-50%, 0);
+  }
+  .activity-dropdown-triangle2 {
+    z-index: 51;
+    box-shadow: none;
+  }
+  .activity-dropdown {
+    @include absolute(auto, auto, auto, -175px);
+    @include flex(unset, unset);
+    @include overflow(hidden, scroll);
+    @include size(500px, 362px);
+    box-shadow: $box-shadow;
+    background-color: $white;
+    flex-direction: column;
+    z-index: 50;
+    margin: 10px 0 0 0;
+    padding: 0;
+    border-radius: 6px;
+    transform: translate(-50%, 0);
+    .activity-dropdown-inner {
+      .activity-dropdown-follow-request {
+        @include flex(start, center);
+        @include size(100%, auto);
+        min-height: 40px;
+        padding: 12px 16px 13px;
+
+        cursor: pointer;
+        .activity-dropdown-follow-request-img {
+          @include size(44px, 44px);
+          position: relative;
+          margin: 0 12px 0 0;
+          flex: 0 1 auto;
+          img {
+            @include size(32px, 32px);
+            border-radius: 50%;
+            border: $main-border;
+            &:nth-child(1) {
+              @include absolute(auto, 0, 0, auto);
+            }
+          }
+        }
+        .activity-dropdown-follow-request-text {
+          @include flex(start, start);
+          flex: 1 1 auto;
+          flex-direction: column;
+          span {
+            @include font(14px, 600, $black);
+            line-height: 18px;
+            margin: -3px 0;
+          }
+          p {
+            @include font(14px, 400, #8e8e8e);
+            line-height: 18px;
+          }
+        }
+        .right-angel {
+          flex: 0 1 auto;
+        }
+      }
+      .activity-dropdown-time {
+        @include font(14px, 600, $black);
+        padding: 8px 0 0 12px;
+        border-top: $main-border;
+      }
+      .activity-dropdown-items {
+        @include flex(start, center);
+        @include size(100%, auto);
+        min-height: 68px;
+        padding: 12px 16px 13px;
+        img {
+          @include size(44px, 44px);
+          border-radius: 50%;
+          border: $main-border;
+          margin: 0 12px 0 0;
+          flex: 0 1 auto;
+        }
+        p {
+          @include font(14px, 400, $black);
+          flex: 1 1 auto;
+          span {
+            @include font(14px, 600, $black);
+          }
+        }
+        button {
+          @include font(14px, 600, $black);
+          border: $main-border;
+          border-radius: 4px;
+          padding: 5px 9px;
+        }
+      }
+    }
+    .activity-dropdown-inner-alt {
+      display: none;
+      .activity-dropdown-inner-alt-items {
+        @include flex(start, center);
+        min-height: 40px;
+        padding: 12px 16px 13px;
+        position: relative;
+        img {
+          @include size(34px, 34px);
+          flex: 0 1 auto;
+          border-radius: 50%;
+          border: $main-border;
+          margin: 0 12px 0 0;
+        }
+        div {
+          flex: 1 1 auto;
+          span {
+            @include font(14px, 600, $black);
+            line-height: 18px;
+            margin: -3px 0;
+          }
+          p {
+            @include font(14px, 400, #8e8e8e);
+            line-height: 18px;
+            margin: -3px 0;
+          }
+        }
+        button {
+          @include font(14px, 600, $black);
+          border: $main-border;
+          flex: 0 1 auto;
+          border-radius: 4px;
+          padding: 5px 9px;
+          margin: 0 0 0 8px;
+          &:first-of-type {
+            background-color: $blue;
+            color: $white;
+            border: 0;
+          }
+        }
+        &::after {
+          @include absolute(auto, 10px, 0, 62px);
+          @include size(auto, 1px);
+          content: "";
+          background-color: #dbdbdb;
+          margin: auto;
+        }
+      }
+    }
+  }
+}

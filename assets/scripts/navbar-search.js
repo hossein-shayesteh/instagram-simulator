@@ -35,6 +35,12 @@ $(document).ready(function () {
       $(".nav-search-dropdown-section").fadeOut("fast");
     }
   );
+  $(".nav-icon ").click(function (e) {
+    e.preventDefault();
+    $(".nav-search-dropdown-section-background").fadeOut("fast");
+    $(".nav-search-dropdown-section").fadeOut("fast");
+  });
+
   //      dropdown inner     //
   // clear all buttom
   $(".nav-search-dropdown-title")
