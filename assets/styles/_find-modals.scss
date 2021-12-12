@@ -45,6 +45,7 @@
                 img {
                   @include size(32px, 32px);
                   border-radius: 50%;
+                  border: $main-border;
                 }
               }
             }
@@ -92,6 +93,7 @@
                     @include size(56px, 56px);
                     margin: 0 12px 0 0;
                     border-radius: 50%;
+                    border: $main-border;
                   }
                 }
                 div {
@@ -163,6 +165,7 @@
               img {
                 @include size(32px, 32px);
                 border-radius: 50%;
+                border: $main-border;
               }
             }
             .follower-post-box-caption-text {
@@ -193,6 +196,7 @@
                 img {
                   @include size(32px, 32px);
                   border-radius: 50%;
+                  border: $main-border;
                   margin: 0 18px 0 0;
                 }
               }

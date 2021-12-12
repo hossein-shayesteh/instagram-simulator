@@ -38,6 +38,30 @@ $(document).ready(function () {
     $("#find-6").show();
     $("#find-6").siblings().hide();
   });
+  $("#find-inner-items-7").click(function (e) {
+    e.preventDefault();
+    $(".find-modal").fadeIn("fast");
+    //fixing screen
+    $("body").addClass("no-scroll");
+    $("#find-7").show();
+    $("#find-7").siblings().hide();
+  });
+  $("#find-inner-items-8").click(function (e) {
+    e.preventDefault();
+    $(".find-modal").fadeIn("fast");
+    //fixing screen
+    $("body").addClass("no-scroll");
+    $("#find-8").show();
+    $("#find-8").siblings().hide();
+  });
+  $("#find-inner-items-9").click(function (e) {
+    e.preventDefault();
+    $(".find-modal").fadeIn("fast");
+    //fixing screen
+    $("body").addClass("no-scroll");
+    $("#find-9").show();
+    $("#find-9").siblings().hide();
+  });
   /////////////////////////
   //      modal hide     //
   /////////////////////////
@@ -99,5 +123,15 @@ $(document).ready(function () {
       .children(".follower-post-box-comments-items-text-replay")
       .children("svg")
       .css("opacity", "0");
+  });
+  /////////////////////////
+  //  modal report modal //
+  /////////////////////////
+  $(".follower-post-box-header-options > button").click(function (e) {
+    e.preventDefault();
+    //show modal
+    $(".dot-modal").fadeIn("fast");
+    //fixing screen
+    $("body").addClass("no-scroll");
   });
 });

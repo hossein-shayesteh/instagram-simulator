@@ -395,3 +395,55 @@
     }
   }
 }
+#find-7 {
+  .otions-media {
+    @include flex(center, center);
+    width: 580px;
+    .follower-post-box-media {
+      @include overflow(hidden, hidden);
+      position: relative;
+      .follower-post-box-media-img {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        img {
+          @include size(580px, auto);
+          transition: transform 0.3s ease;
+          max-height: 1108px;
+        }
+      }
+      .follower-post-box-media-scroll {
+        .left-scroll {
+          @include absolute(50%, auto, auto, 0);
+          @include flex(center, center);
+          @include size(44px, 44px);
+          transform: translateY(-50%);
+          padding: 10px;
+          cursor: pointer;
+          .left-scroll-inner {
+            @include flex(center, center);
+            @include size(24px, 24px);
+            background-color: rgba(255, 255, 255, 0.75);
+            box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.4);
+            border-radius: 50%;
+          }
+        }
+        .right-scroll {
+          @include absolute(50%, 0, auto, auto);
+          @include flex(center, center);
+          @include size(44px, 44px);
+          transform: translateY(-50%);
+          padding: 10px;
+          cursor: pointer;
+          .right-scroll-inner {
+            @include flex(center, center);
+            @include size(24px, 24px);
+            background-color: rgba(255, 255, 255, 0.75);
+            box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.4);
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+}
